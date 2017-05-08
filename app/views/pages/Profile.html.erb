@@ -1,0 +1,60 @@
+
+<div class="jumbotron">
+  <h1><%= current_user.first_name %>  <%= current_user.last_name %> </h1> 
+  <h2></h2>
+
+  <p>Consultant Feed at your service</p>
+  <p>profile page</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+
+<!--THe Body -->
+
+
+<div class="row">
+	<div class="col-xs-3">
+	<%=render '/components/pet_form'%>
+		<div class="panel panel=default">
+			<div class="panel-body">
+			<p>stats</p>
+			</div>
+		</div>
+	</div>
+	
+<div class="row">
+	<div class="col-xs-6">
+	<% for @p in @pets %>
+		<div class="panel panel=default">
+			<div class="panel-body">
+
+			<p> Pet Name:  <%= @p.pet_name %> | Age:  <%= @p.pet_age %> | Type:  <%= @p.tpe %>  </p>
+			<p> About:  <%= @p.about %>  <%= image_tag @p.image.url %></p> 
+			<p> Weight: <%= @p.weight %>  |Height: <%= @p.height %> | Size: <%= @p.size %> </p>
+			<p> Breed: <%= @p.breed %>  |Sex:  <%= @p.sex %> |Spayed: <%= @p.spay %> </p>
+			<p>Allergies:  <%= @p.allergies %>  | Medications: <%= @p.medications %> | Vaccines: <%= @p.vaccine %> </p>
+
+			</div>
+		</div>
+		<%end%>
+	</div>
+<div class="row">
+	<div class="col-xs-3">
+		<div class="panel panel=default">
+			<div class="panel-body">
+			<p>about</p>
+			</div>
+		</div>
+	</div>
+<!-- second row  -->
+<div class="row">
+	<div class="col-xs-3 col-xs-offset-9">
+		<div class="panel panel=default">
+			<div class="panel-body">
+			<p>trends</p>
+			</div>
+		</div>
+	</div>
+  </div>
+ 	</div>
+		</div>
+			</div>
